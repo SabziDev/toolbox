@@ -1,0 +1,81 @@
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+<!-- ⚒️ Developed by: Abolfazl Sabzmohammadi -->
+<!--  -->
+<!--  -->
+<!-- 🌐 Website (resume): https://SabziDev.com -->
+<!--  -->
+<!-- 🚀 Telegram: https://t.me/SabziDev -->
+<!--  -->
+<!-- 📸 Instagram: https://instagram.com/SabziDev -->
+<!--  -->
+<!-- 😺 GitHub: https://github.com/SabziDev -->
+<!--  -->
+<!-- 📧 Email: SabziDev@gmail.com -->
+<!--  -->
+<!--  -->
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+<!doctype html>
+
+<!-- TODO light-mode? -->
+<!-- TODO App lang - dir -->
+<html lang="LANGUAGE" dir="DIRECTION" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TODO Browser-UI-Color? -->
+    <meta name="theme-color" content="COLOR" />
+    <!-- TODO App Favicon ( best size for favicon: 16×16 ) -->
+    <link rel="icon" type="image/png" href="./app-favicon.png" />
+
+    <style>
+      #app-preloader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        inset: 0;
+        /* TODO Preloader BG */
+        background-color: #fff;
+        z-index: 9999;
+      }
+      .app-preloader__pulse {
+        width: 100px;
+        height: 100px;
+        margin: 100px auto;
+        border-radius: 100%;
+        /* TODO Preloader Pulse BG */
+        background-color: COLOR;
+        opacity: 0.8;
+        animation: app-preloader-pulse 1.8s infinite ease-in-out;
+      }
+
+      @keyframes app-preloader-pulse {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="./src/input.css" />
+  </head>
+
+  <!-- TODO App BG - TC - Font -->
+  <!-- TODO Add overflow-x-hidden after final responsive -->
+  <body class="bg-COLOR text-COLOR font-Name overflow-hidden">
+    <div id="app-preloader">
+      <div class="app-preloader__pulse"></div>
+    </div>
+
+    <!--? ============================================= -- React App -- =============================================  -->
+    <div id="root"></div>
+    <!--? ============================================= -- React App -- =============================================  -->
+
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>

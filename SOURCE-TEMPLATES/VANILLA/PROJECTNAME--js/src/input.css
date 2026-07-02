@@ -1,0 +1,118 @@
+/* TODO Declare-animation? */
+/* --animate-NAME: NAME DURATION ease-in? DELAY? ITERATION-COUNT alternate? FILL-MODE?; */
+
+@import "tailwindcss";
+@custom-variant hover (&:hover);
+/* TODO Custom-Variant for Dark-mode? */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* ============================================= -- Theme Configuration -- ============================================= */
+@theme {
+  /* TODO Reset Tailwind Defaults! */
+  --shadow-*: initial;
+  --drop-shadow-*: initial;
+
+  /* TODO Configure App Colors */
+  --color-COLOR: COLOR;
+  --color-COLOR: COLOR;
+
+  /* TODO Configure App Fonts */
+  /* WEIGHT */
+  --font-Name: "NAME", Arial, Helvetica, sans-serif;
+}
+/* ============================================= -- Theme Configuration -- ============================================= */
+
+/*! ============================================= -- Base Customization -- ============================================= */
+@layer base {
+  html {
+    /* TODO selection? BG - TC */
+    @apply scroll-smooth selection:bg-COLOR selection:text-COLOR;
+  }
+  html::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+  html::-webkit-scrollbar-thumb {
+    /* TODO Scrollbar Color */
+    @apply bg-COLOR;
+  }
+  html::-webkit-scrollbar-thumb:hover {
+    /* TODO Scrollbar Color */
+    @apply bg-COLOR/80;
+  }
+
+  input,
+  textarea {
+    /* TODO input & textarea ring BG */
+    @apply outline-0! transition-shadow focus:ring-2 focus:ring-COLOR focus:ring-offset-0;
+  }
+  input[type="number"]::-webkit-inner-spin-button {
+    @apply appearance-none;
+  }
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+  input:-webkit-autofill {
+    @apply transition-all duration-9999999;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  @font-face {
+    /* TODO App Font-Face */
+    font-family: "NAME";
+    /* TODO Font Weight? */
+    font-weight: WEIGHT;
+    font-display: swap;
+
+    src:
+      local("NAME"),
+      url("/fonts/Fontname/Weight.woff2") format("woff2");
+  }
+}
+@utility container {
+  /* TODO Container p-x */
+  @apply mx-auto px-4 lg:px-2.5;
+}
+/*! ============================================= -- Base Customization -- ============================================= */
+
+/*? ============================================= -- Custom Utilities -- ============================================= */
+@utility ltr {
+  direction: ltr;
+}
+@utility rtl {
+  direction: rtl;
+}
+/*? ============================================= -- Custom Utilities -- ============================================= */
+
+/** ============================================= -- Custom Components -- ============================================= */
+@utility flex-items-center {
+  @apply flex items-center;
+}
+@utility flex-justify-center {
+  @apply flex justify-center;
+}
+@utility flex-center {
+  @apply flex-items-center justify-center;
+}
+@utility flex-start {
+  @apply flex items-start justify-start;
+}
+@utility flex-end {
+  @apply flex items-end justify-end;
+}
+
+/* TODO Btn Component */
+/* @utility btn {
+  @apply CLASSES;
+} */
+/** ============================================= -- Custom Components -- ============================================= */
+
+/* ============================================= -- Packages Customization -- ============================================= */
+@layer base {
+  /* PACKAGENAME */
+  /* codes... */
+}
+/* ============================================= -- Packages Customization -- ============================================= */

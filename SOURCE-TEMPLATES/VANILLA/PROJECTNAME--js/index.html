@@ -1,0 +1,187 @@
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+<!-- ⚒️ Developed by: Abolfazl Sabzmohammadi -->
+<!--  -->
+<!--  -->
+<!-- 🌐 Website (resume): https://SabziDev.com -->
+<!--  -->
+<!-- 🚀 Telegram: https://t.me/SabziDev -->
+<!--  -->
+<!-- 📸 Instagram: https://instagram.com/SabziDev -->
+<!--  -->
+<!-- 😺 GitHub: https://github.com/SabziDev -->
+<!--  -->
+<!-- 📧 Email: SabziDev@gmail.com -->
+<!--  -->
+<!--  -->
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+<!--! Use Svg -->
+<svg class="size-SIZE">
+  <use href="/images/icons/icons.svg#ID" />
+</svg>
+
+<!doctype html>
+
+<!-- TODO light-mode? -->
+<!-- TODO App lang - dir -->
+<html lang="LANGUAGE" dir="DIRECTION" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TODO Home-page Title - Desc -->
+    <title>Title</title>
+    <meta name="description" content="Description" />
+    <!-- TODO Browser-UI-Color? -->
+    <meta name="theme-color" content="COLOR" />
+    <!-- TODO App Favicon ( best size for favicon: 16×16 ) -->
+    <link rel="icon" type="image/png" href="./app-favicon.png" />
+
+    <style>
+      #app-preloader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        inset: 0;
+        /* TODO Preloader BG */
+        background-color: #fff;
+        z-index: 9999;
+      }
+      .app-preloader__pulse {
+        width: 100px;
+        height: 100px;
+        margin: 100px auto;
+        border-radius: 100%;
+        /* TODO Preloader Pulse BG */
+        background-color: COLOR;
+        opacity: 0.8;
+        animation: app-preloader-pulse 1.8s infinite ease-in-out;
+      }
+
+      @keyframes app-preloader-pulse {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="./src/input.css" />
+  </head>
+
+  <!-- TODO App BG - TC - Font -->
+  <!-- TODO Add overflow-x-hidden after final responsive -->
+  <body class="bg-COLOR text-COLOR font-Name overflow-hidden">
+    <div id="app-preloader">
+      <div class="app-preloader__pulse"></div>
+    </div>
+
+    <div
+      id="app-load-error"
+      class="fixed inset-0 z-9999 flex-center hidden h-screen flex-col overflow-hidden px-4 text-center select-none"
+      style="
+        background: radial-gradient(
+          circle at top right,
+          #000041,
+          #004162,
+          #89a0ae
+        );
+      "
+    >
+      <span
+        class="absolute inset-0 opacity-15"
+        style="
+          background-image: radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 2px
+          );
+          background-size: 40px 40px;
+          mask-image: radial-gradient(
+            circle at center,
+            black 0%,
+            transparent 70%
+          );
+          -webkit-mask-image: radial-gradient(
+            circle at center,
+            black 0%,
+            transparent 70%
+          );
+        "
+      ></span>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="size-17.5 fill-amber-700"
+      >
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-1.48 0-2.85.43-4.01 1.17l1.46 1.46C10.21 6.23 11.08 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3 0 1.13-.64 2.11-1.56 2.62l1.45 1.45C23.16 18.16 24 16.68 24 15c0-2.64-2.05-4.78-4.65-4.96zM3 5.27l2.75 2.74C2.56 8.15 0 10.77 0 14c0 3.31 2.69 6 6 6h11.73l2 2L21 20.73 4.27 4 3 5.27zM7.73 10l8 8H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h1.73z"
+        />
+      </svg>
+
+      <h1 class="mb-2 text-3xl font-bold text-amber-700">
+        <!-- TODO AppLoadError Title -->
+        خطا در دریافت اطلاعات
+        <!-- Failed to load data -->
+      </h1>
+
+      <p class="mb-8 max-w-md text-lg text-gray-300">
+        <!-- TODO AppLoadError Desc -->
+        لطفا صفحه را رفرش کنید
+        <!-- Please refresh the page -->
+      </p>
+
+      <button
+        type="button"
+        onclick="window.location.reload()"
+        class="shadow-xl hover:shadow-2xl z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 active:scale-[0.96]"
+      >
+        <!-- TODO AppLoadError Btn-Text -->
+        تلاش مجدد
+        <!-- Try Again -->
+      </button>
+    </div>
+
+    <!--? ============================================= -- Header -- =============================================  -->
+    <header>
+      <div class="container"></div>
+    </header>
+    <!--? ============================================= -- Header -- =============================================  -->
+
+    <!--! ============================================= -- Main -- =============================================  -->
+    <main id="main-root">
+      <!-- TODO Sections mt-Size -->
+      <div class="container *:mt-SIZE"></div>
+    </main>
+    <!--! ============================================= -- Main -- =============================================  -->
+
+    <!--* ============================================= -- Footer -- =============================================  -->
+    <!-- TODO Developer Signature Section! -->
+    <!-- TODO Developer-Signature TS -->
+    <a
+      href="https://SabziDev.com"
+      target="_blank"
+      rel="noreferrer noopener"
+      class="text-SIZE font-sans ltr"
+    >
+      <span>Built pixel by pixel by </span>
+      <strong class="text-emerald-600 underline underline-offset-2">
+        Sabzmohammadi
+      </strong>
+      <span> 💚</span>
+    </a>
+
+    <footer>
+      <div class="container"></div>
+    </footer>
+    <!--* ============================================= -- Footer -- =============================================  -->
+
+    <script type="module" src="./src/scripts/app.js"></script>
+  </body>
+</html>
