@@ -17,12 +17,12 @@ alias iT="npm i tailwindcss @tailwindcss/vite"
 alias iA="npm i axios && run"
 alias iZ="npm i zod && run"
 # ---------------------------- - PURE - ----------------------------
-alias iSA="npm i sweetalert2"
+alias iSA="npm i sweetalert2 && run"
 # -------- TS --------
 # ---------------------------- - REACT - ----------------------------
 alias iBPRC="npm i -D babel-plugin-react-compiler@latest @rolldown/plugin-babel"
 
-alias iC="npm i clsx"
+alias iC="npm i clsx && run"
 
 alias iRR="npm i react-router"
 alias iRTLB="npm i react-top-loading-bar"
