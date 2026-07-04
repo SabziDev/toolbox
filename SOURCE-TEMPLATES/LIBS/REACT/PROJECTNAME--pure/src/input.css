@@ -85,6 +85,11 @@
 @utility rtl {
   direction: rtl;
 }
+
+/* TODO Custom Utility? */
+@utility UTILITYNAME {
+  @apply CLASSES;
+}
 /*? ============================================= -- Custom Utilities -- ============================================= */
 
 /** ============================================= -- Custom Components -- ============================================= */
@@ -104,7 +109,7 @@
   @apply flex items-end justify-end;
 }
 
-/* TODO Btn Component */
+/* TODO Btn Component? */
 @utility btn {
   @apply CLASSES;
 }
