@@ -82,7 +82,7 @@
 
     <div
       id="app-load-error"
-      class="fixed inset-0 z-9999 flex-center hidden h-screen flex-col overflow-hidden px-4 text-center select-none"
+      class="fixed inset-0 z-9999 flex-center h-screen flex-col overflow-hidden px-4 text-center select-none"
       style="
         background: radial-gradient(
           circle at top right,
@@ -127,8 +127,8 @@
 
       <h1 class="mb-2 text-3xl font-bold text-amber-700">
         <!-- TODO AppLoadError Title -->
-        خطا در دریافت اطلاعات
-        <!-- Failed to load data -->
+        مشکلی پیش آمد
+        <!-- Something went wrong -->
       </h1>
 
       <p class="mb-8 max-w-md text-lg text-gray-300">
@@ -140,7 +140,7 @@
       <button
         type="button"
         onclick="window.location.reload()"
-        class="shadow-xl hover:shadow-2xl z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 active:scale-[0.96]"
+        class="z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 shadow-xl hover:shadow-2xl active:scale-[0.96]"
       >
         <!-- TODO AppLoadError Btn-Text -->
         تلاش مجدد

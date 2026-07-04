@@ -49,7 +49,7 @@ const AppLoadError = () => {
       <button
         type="button"
         onClick={() => window.location.reload()}
-        className="shadow-xl hover:shadow-2xl z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 active:scale-[0.96]"
+        className="z-10 cursor-pointer rounded-lg bg-white/90 p-3 font-medium text-black/60 shadow-xl hover:shadow-2xl active:scale-[0.96]"
       >
         {/* TODO AppLoadError Btn-Text */}
         تلاش مجدد
