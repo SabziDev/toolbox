@@ -8,7 +8,7 @@
 
 /* ============================================= -- Theme Configuration -- ============================================= */
 @theme {
-  /* TODO Reset Tailwind Defaults! */
+  /* TODO Reset Tailwind Defaults!? */
   --shadow-*: initial;
   --drop-shadow-*: initial;
 
