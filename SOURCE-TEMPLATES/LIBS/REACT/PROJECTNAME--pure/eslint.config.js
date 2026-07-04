@@ -83,6 +83,14 @@ const config = defineConfig(
   {
     rules: externalPluginsRules,
   },
+
+  {
+    files: ["src/routes.{jsx,tsx}"],
+
+    rules: {
+      "react-refresh/only-export-components": "off",
+    },
+  },
 );
 
 export default config;
