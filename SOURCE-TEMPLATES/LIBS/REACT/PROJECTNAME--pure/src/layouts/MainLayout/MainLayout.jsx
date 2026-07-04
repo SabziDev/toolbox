@@ -6,7 +6,7 @@ import useCurrentPageStatus from "../hooks/useCurrentPageStatus";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
-const RootLayout = () => {
+const MainLayout = () => {
   const outlet = useOutlet();
 
   const { isPage404, isHideLayout } = useCurrentPageStatus();
@@ -33,4 +33,4 @@ const RootLayout = () => {
   );
 };
 
-export default RootLayout;
+export default MainLayout;
