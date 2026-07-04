@@ -12,12 +12,14 @@
   --shadow-*: initial;
   --drop-shadow-*: initial;
 
-  /* TODO Configure App Colors */
+  /* TODO App Colors */
   --color-COLOR: COLOR;
   --color-COLOR: COLOR;
 
-  /* TODO Configure App Fonts */
-  /* WEIGHT */
+  /* TODO App Tracking? */
+  --tracking-tightest: -0.075em;
+
+  /* TODO App Fonts */
   --font-Name: "NAME", Arial, Helvetica, sans-serif;
 }
 /* ============================================= -- Theme Configuration -- ============================================= */
@@ -61,10 +63,8 @@
   }
 
   @font-face {
-    /* TODO App Font-Face */
+    /* TODO Font-Face */
     font-family: "NAME";
-    /* TODO Font Weight? */
-    font-weight: WEIGHT;
     font-display: swap;
 
     src:
@@ -105,9 +105,9 @@
 }
 
 /* TODO Btn Component */
-/* @utility btn {
+@utility btn {
   @apply CLASSES;
-} */
+}
 /** ============================================= -- Custom Components -- ============================================= */
 
 /* ============================================= -- Packages Customization -- ============================================= */
