@@ -1,4 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 import {
   createNameApi,
@@ -34,6 +35,8 @@ const useCreateNameMutation = () => {
         queryKey,
       });
 
+      // TODO onSuccess Message
+      toast.success("MESSAGE");
       resetForm();
     },
   });
@@ -56,9 +59,10 @@ const useUpdateNameMutation = () => {
       const updatedItems = cachedItems.map((cachedItem) =>
         cachedItem.id === id ? { ...cachedItem, ...data } : cachedItem,
       );
-
       queryClient.setQueryData(queryKey, updatedItems);
 
+      // TODO onSuccess Message
+      toast.success("MESSAGE");
       resetForm();
     },
   });
@@ -80,8 +84,10 @@ const useDeleteNameMutation = () => {
       const updatedItems = cachedItems.filter(
         (cachedItem) => cachedItem.id !== id,
       );
-
       queryClient.setQueryData(queryKey, updatedItems);
+
+      // TODO onSuccess Message
+      toast.success("MESSAGE");
     },
   });
 

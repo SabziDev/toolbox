@@ -14,14 +14,15 @@ alias iEL="npm i -D @fullstacksjs/eslint-config eslint prettier eslint-plugin-un
 
 alias iT="npm i tailwindcss @tailwindcss/vite"
 
+alias iS="npm i swiper && run"
+
 alias iA="npm i axios && run"
 alias iZ="npm i zod && run"
 # ---------------------------- - PURE - ----------------------------
-alias iSA="npm i sweetalert2 && run"
+alias iSA2="npm i sweetalert2 && run"
 # -------- TS --------
 # ---------------------------- - REACT - ----------------------------
 alias iBPRC="npm i -D babel-plugin-react-compiler@latest @rolldown/plugin-babel"
-
 alias iC="npm i clsx && run"
 
 alias iRR="npm i react-router"
@@ -29,7 +30,8 @@ alias iRTLB="npm i react-top-loading-bar"
 alias iFM="npm i framer-motion"
 
 alias iRQ="npm i @tanstack/react-query && run"
-alias iRHF="npm i react-hook-form && run"
+alias iRHF="npm i react-hook-form @hookform/resolvers && run"
+
 alias iRI="npm i react-icons && run"
 alias iRHT="npm i react-hot-toast && run"
 # -------- TS --------
