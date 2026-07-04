@@ -10,6 +10,28 @@ import sortComments from "./eslint-configs/sort/sort-comments/sort-comments.js";
 import sortJsxProps from "./eslint-configs/sort/sort-jsx-props/sort-jsx-props.js";
 import sortObjectProps from "./eslint-configs/sort/sort-object-props/sort-object-props.js";
 
+const baseRules = {
+  "func-style": ["warn", "expression"],
+  quotes: [
+    "error",
+    "double",
+    { avoidEscape: true, allowTemplateLiterals: false },
+  ],
+  eqeqeq: ["error", "always"],
+  "no-console": "warn",
+
+  "jsx-a11y/click-events-have-key-events": "off",
+  "jsx-a11y/no-noninteractive-element-interactions": "off",
+
+  "custom/add-blank-line-before-return": "warn",
+  "custom/merge-duplicate-id-and-classname-props": "warn",
+  "custom/merge-exports": "warn",
+  "custom/no-invalid-id-and-classname-value": "error",
+  "custom/no-useless-template-literal": "warn",
+  "custom/sort-comments": "warn",
+  "custom/sort-jsx-props": "warn",
+  "custom/sort-object-props": "warn",
+};
 const externalPluginsRules = {
   "unicorn/consistent-function-scoping": "warn",
 
@@ -45,28 +67,6 @@ const customRules = {
     "sort-object-props": sortObjectProps.rules["sort-object-props"],
   },
 };
-const baseRules = {
-  "func-style": ["warn", "expression"],
-  quotes: [
-    "error",
-    "double",
-    { avoidEscape: true, allowTemplateLiterals: false },
-  ],
-  eqeqeq: ["error", "always"],
-  "no-console": "warn",
-
-  "jsx-a11y/click-events-have-key-events": "off",
-  "jsx-a11y/no-noninteractive-element-interactions": "off",
-
-  "custom/add-blank-line-before-return": "warn",
-  "custom/merge-duplicate-id-and-classname-props": "warn",
-  "custom/merge-exports": "warn",
-  "custom/no-invalid-id-and-classname-value": "error",
-  "custom/no-useless-template-literal": "warn",
-  "custom/sort-comments": "warn",
-  "custom/sort-jsx-props": "warn",
-  "custom/sort-object-props": "warn",
-};
 
 const config = defineConfig(
   {
@@ -89,6 +89,8 @@ const config = defineConfig(
 
     rules: {
       "react-refresh/only-export-components": "off",
+
+      "custom/sort-object-props": "off",
     },
   },
 );

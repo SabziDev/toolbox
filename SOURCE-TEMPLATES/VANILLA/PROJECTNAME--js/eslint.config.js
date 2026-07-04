@@ -7,6 +7,22 @@ import addBlankLineBeforeReturn from "./eslint-configs/padding/add-blank-line-be
 import sortComments from "./eslint-configs/sort/sort-comments/sort-comments.js";
 import sortObjectProps from "./eslint-configs/sort/sort-object-props/sort-object-props.js";
 
+const baseRules = {
+  "func-style": ["warn", "expression"],
+  quotes: [
+    "error",
+    "double",
+    { avoidEscape: true, allowTemplateLiterals: false },
+  ],
+  eqeqeq: ["error", "always"],
+  "no-console": "warn",
+
+  "custom/add-blank-line-before-return": "warn",
+  "custom/merge-exports": "warn",
+  "custom/no-useless-template-literal": "warn",
+  "custom/sort-comments": "warn",
+  "custom/sort-object-props": "warn",
+};
 const externalPluginsRules = {
   "unicorn/filename-case": "off",
   "unicorn/prefer-global-this": "off",
@@ -29,22 +45,6 @@ const customRules = {
 
     "sort-object-props": sortObjectProps.rules["sort-object-props"],
   },
-};
-const baseRules = {
-  "func-style": ["warn", "expression"],
-  quotes: [
-    "error",
-    "double",
-    { avoidEscape: true, allowTemplateLiterals: false },
-  ],
-  eqeqeq: ["error", "always"],
-  "no-console": "warn",
-
-  "custom/add-blank-line-before-return": "warn",
-  "custom/merge-exports": "warn",
-  "custom/no-useless-template-literal": "warn",
-  "custom/sort-comments": "warn",
-  "custom/sort-object-props": "warn",
 };
 
 const config = defineConfig(
