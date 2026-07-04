@@ -26,7 +26,7 @@ const queryClient = new QueryClient({
 });
 window.__TANSTACK_QUERY_CLIENT__ = queryClient;
 
-const AppProviders = () => {
+const AppProviders = ({ children }) => {
   return (
     // TODO React-Query
     <QueryClientProvider client={queryClient}>
@@ -36,6 +36,8 @@ const AppProviders = () => {
           style: { background: "COLOR", color: "COLOR" },
         }}
       />
+
+      {children}
     </QueryClientProvider>
   );
 };
