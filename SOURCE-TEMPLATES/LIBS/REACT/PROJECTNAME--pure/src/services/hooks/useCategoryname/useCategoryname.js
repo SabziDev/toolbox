@@ -1,32 +1,25 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
-import {
-  createNameApi,
-  deleteNameApi,
-  getNameApi,
-  updateNameApi,
-} from "@/services/CATEGORYNAME";
-
 const useNameQuery = () => {
-  // TODO Query-Key
+  // TODO Query-Key && data: name && queryFn
   const queryKey = ["NAME"];
 
-  const { data, ...rest } = useQuery({
+  const { data: name, ...rest } = useQuery({
     queryKey,
     queryFn: () => getNameApi(),
   });
 
-  return { data, ...rest };
+  return { name, ...rest };
 };
 
 const useCreateNameMutation = () => {
   const queryClient = useQueryClient();
 
-  // TODO Query-Key
+  // TODO Query-Key && mutate: createName && queryFn
   const queryKey = ["NAME"];
 
-  const { mutate, ...rest } = useMutation({
+  const { mutate: createName, ...rest } = useMutation({
     mutationFn: ({ data }) => createNameApi({ data }),
 
     // TODO Reset-Form?
@@ -41,16 +34,16 @@ const useCreateNameMutation = () => {
     },
   });
 
-  return { mutate, ...rest };
+  return { createName, ...rest };
 };
 
 const useUpdateNameMutation = () => {
   const queryClient = useQueryClient();
 
-  // TODO Query-Key
+  // TODO Query-Key && mutate: updateName && queryFn
   const queryKey = ["NAME"];
 
-  const { mutate, ...rest } = useMutation({
+  const { mutate: updateName, ...rest } = useMutation({
     mutationFn: ({ id, data }) => updateNameApi({ id, data }),
 
     // TODO Reset-Form?
@@ -67,16 +60,16 @@ const useUpdateNameMutation = () => {
     },
   });
 
-  return { mutate, ...rest };
+  return { updateName, ...rest };
 };
 
 const useDeleteNameMutation = () => {
   const queryClient = useQueryClient();
 
-  // TODO Query-Key
+  // TODO Query-Key && mutate: deleteName && queryFn
   const queryKey = ["NAME"];
 
-  const { mutate, ...rest } = useMutation({
+  const { mutate: deleteName, ...rest } = useMutation({
     mutationFn: ({ id }) => deleteNameApi({ id }),
 
     onSuccess: (_, { id }) => {
@@ -91,12 +84,5 @@ const useDeleteNameMutation = () => {
     },
   });
 
-  return { mutate, ...rest };
-};
-
-export {
-  useCreateNameMutation,
-  useDeleteNameMutation,
-  useNameQuery,
-  useUpdateNameMutation,
+  return { deleteName, ...rest };
 };
