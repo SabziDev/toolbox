@@ -11,11 +11,9 @@ alias lintFix="npm run lint:fix"
 # ---------------------------- - ALL - ----------------------------
 alias iVPSH="npm i -D vite-plugin-simple-html"
 alias iEL="npm i -D @fullstacksjs/eslint-config eslint prettier eslint-plugin-unicorn"
-
 alias iT="npm i tailwindcss @tailwindcss/vite"
 
 alias iS="npm i swiper && run"
-
 alias iA="npm i axios && run"
 alias iZ="npm i zod && run"
 # ---------------------------- - PURE - ----------------------------
@@ -29,11 +27,11 @@ alias iRR="npm i react-router"
 alias iRTLB="npm i react-top-loading-bar"
 alias iFM="npm i framer-motion"
 
-alias iRQ="npm i @tanstack/react-query && run"
-alias iRHF="npm i react-hook-form @hookform/resolvers && run"
-
 alias iRI="npm i react-icons && run"
 alias iRHT="npm i react-hot-toast && run"
+alias iRQ="npm i @tanstack/react-query && run"
+alias iRHF="npm i react-hook-form @hookform/resolvers && run"
+alias iRQAZ="npm i @tanstack/react-query && iA && iZ && run"
 # -------- TS --------
 #? --------------------------------------------------------------------------------------------------------
 

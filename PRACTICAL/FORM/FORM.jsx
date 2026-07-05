@@ -17,16 +17,12 @@ const submitForm = (data) => createName({ data, resetForm });
 <form onSubmit={handleSubmit(submitForm)}>
   {/* TODO Input type && register - Error Message */}
   <input type="TYPE" {...register("NAME")} />
-  {errors.NAME && errors.NAME.message}
+  {errors.NAME && <span>{errors.NAME.message}</span>}
 
-  {/* TODO Submit Btn classes */}
   <button
     type="submit"
     disabled={isSubmitting}
-    className={clsx([
-      "CLASSES",
-      isSubmitting && "pointer-events-none opacity-50",
-    ])}
+    className={clsx(["", isSubmitting && "pointer-events-none opacity-50"])}
   >
     BTN
   </button>

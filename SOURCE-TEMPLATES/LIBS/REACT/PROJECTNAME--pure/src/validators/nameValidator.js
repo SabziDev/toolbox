@@ -14,26 +14,26 @@ import * as z from "zod";
 // TODO Validator Schema
 const nameSchema = z.object({
   name1: z
-    .nonempty("Name1 اجباری است!")
-    // .nonempty("Name1 is required!")
-    .string("Name1 باید یک استرینگ باشد!")
-    // .string("Name1 should be a string!")
-    .min(COUNT, "Name1 باید حداقل شامل COUNT کاراکتر باشد!")
-    // .min(COUNT, "Name1 must contain at least COUNT characters!")
-    .max(COUNT, "Name1 باید حداکثر شامل COUNT کاراکتر باشد!")
-    // .max(COUNT, "Name1 must contain at most COUNT characters!")
-    .regex(/REGEX/, "NAME1 MESSAGE"),
+    .string({ error: "Name1 باید یک استرینگ باشد!" })
+    // .string({ error: "Name1 should be a string!" })
+    .nonempty({ error: "Name1 اجباری است!" })
+    // .nonempty({ error: "Name1 is required!" })
+    .min(COUNT, { error: "Name1 باید حداقل شامل COUNT کاراکتر باشد!" })
+    // .min(COUNT, { error: "Name1 must contain at least COUNT characters!" })
+    .max(COUNT, { error: "Name1 باید حداکثر شامل COUNT کاراکتر باشد!" })
+    // .max(COUNT, { error: "Name1 must contain at most COUNT characters!" })
+    .regex(/REGEX/, { error: "NAME1 MESSAGE" }),
 
   name2: z
-    .nonempty("Name2 اجباری است!")
-    // .nonempty("Name2 is required!")
-    .string("Name2 باید یک استرینگ باشد!")
-    // .string("Name2 should be a string!")
-    .min(COUNT, "Name2 باید حداقل شامل COUNT کاراکتر باشد!")
-    // .min(COUNT, "Name2 must contain at least COUNT characters!")
-    .max(COUNT, "Name2 باید حداکثر شامل COUNT کاراکتر باشد!")
-    // .max(COUNT, "Name2 must contain at most COUNT characters!")
-    .regex(/REGEX/, "NAME2 MESSAGE"),
+    .string({ error: "Name2 باید یک استرینگ باشد!" })
+    // .string({ error: "Name2 should be a string!" })
+    .nonempty({ error: "Name2 اجباری است!" })
+    // .nonempty({ error: "Name2 is required!" })
+    .min(COUNT, { error: "Name2 باید حداقل شامل COUNT کاراکتر باشد!" })
+    // .min(COUNT, { error: "Name2 must contain at least COUNT characters!" })
+    .max(COUNT, { error: "Name2 باید حداکثر شامل COUNT کاراکتر باشد!" })
+    // .max(COUNT, { error: "Name2 must contain at most COUNT characters!" })
+    .regex(/REGEX/, { error: "NAME2 MESSAGE" }),
 });
 
 export default nameSchema;

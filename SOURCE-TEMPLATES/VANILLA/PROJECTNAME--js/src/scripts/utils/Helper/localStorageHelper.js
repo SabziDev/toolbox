@@ -1,13 +1,14 @@
-const localStorageHelper = (key, defaultValue) => {
-  const getValue = () => {
-    const localStorageResult = localStorage.getItem(key);
+const localStorageHelper = ({ key = "", defaultValue = "" }) => {
+  const getStoredValue = () => {
+    const localStorageResult = JSON.parse(localStorage.getItem(key));
 
     return localStorageResult === null ? defaultValue : localStorageResult;
   };
 
-  const setValue = (value) => localStorage.setItem(key, value);
+  const setValue = (value = "") =>
+    localStorage.setItem(key, JSON.stringify(value));
 
-  return [getValue, setValue];
+  return [getStoredValue, setValue];
 };
 
 export default localStorageHelper;

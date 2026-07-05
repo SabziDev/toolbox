@@ -25,11 +25,19 @@ const ThemeContext = createContext("light");
 ThemeContext.displayName = "ThemeContext";
 
 const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage("theme", "light");
+  const [storedTheme, setStoredTheme] = useLocalStorage({
+    key: "theme",
+    defaultValue: "light",
+  });
 
-  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+  const toggleTheme = () =>
+    setStoredTheme(storedTheme === "light" ? "dark" : "light");
 
-  return <ThemeContext value={{ theme, toggleTheme }}>{children}</ThemeContext>;
+  return (
+    <ThemeContext value={{ theme: storedTheme, toggleTheme }}>
+      {children}
+    </ThemeContext>
+  );
 };
 
 export { ThemeContextProvider };
