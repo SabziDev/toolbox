@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 
-const useCookie = ({ key = "", defaultValue = "" }) => {
+const useCookie = ({ key = "", defaultValue = null }) => {
   const [storedValue, setStoredValue] = useState(defaultValue);
 
   useEffect(() => {
     (async () => {
-      const cookieResult = JSON.parse(await cookieStore.get(key));
+      const cookieResult = await cookieStore.get(key);
 
-      if (cookieResult !== null) setStoredValue(cookieResult.value);
+      if (cookieResult !== null) setStoredValue(JSON.parse(cookieResult.value));
     })();
   }, [key]);
 
-  const setValue = async (cookieOptions = {}) => {
+  const setValue = async (cookieOptions) => {
     const finalValue = JSON.stringify(cookieOptions.value);
-    const options = { name: key, value: finalValue, ...cookieOptions };
+    const options = { name: key, ...cookieOptions, value: finalValue };
 
     await cookieStore.set(options);
     setStoredValue(cookieOptions.value);

@@ -14,15 +14,27 @@ const {
 
 const submitForm = (data) => createName({ data, resetForm });
 
-<form onSubmit={handleSubmit(submitForm)}>
-  {/* TODO Input type && register - Error Message */}
-  <input type="TYPE" {...register("NAME")} />
-  {errors.NAME && <span>{errors.NAME.message}</span>}
+<form noValidate onSubmit={handleSubmit(submitForm)}>
+  {/* TODO Input-type - placeholder - TC - B && R - register - Error Message */}
+  <input
+    type="TYPE"
+    placeholder="PLACEHOLDER"
+    className={clsx([
+      "placeholder:text-NAME",
+      errors.email ? "border-red-500 ring-red-500" : "border-blue",
+    ])}
+    {...register("NAME")}
+  />
+  {errors.NAME && <span className="text-red-500">{errors.NAME.message}</span>}
 
   <button
     type="submit"
     disabled={isSubmitting}
-    className={clsx(["", isSubmitting && "pointer-events-none opacity-50"])}
+    className={clsx([
+      // TODO Btn bg
+      "bg-NAME active:scale-98 active:bg-NAME/90",
+      isSubmitting && "pointer-events-none opacity-50 select-none",
+    ])}
   >
     BTN
   </button>

@@ -45,7 +45,7 @@
   input,
   textarea {
     /* TODO input & textarea ring BG */
-    @apply outline-0! transition-shadow focus:ring-2 focus:ring-COLOR focus:ring-offset-0;
+    @apply outline-0! transition-shadow focus:ring-2 focus:ring-COLOR;
   }
   input[type="number"]::-webkit-inner-spin-button {
     @apply appearance-none;
@@ -54,7 +54,7 @@
     @apply hidden;
   }
   input:-webkit-autofill {
-    @apply transition-all duration-9999999;
+    @apply [transition-property:color,background-color] duration-9999999;
   }
 
   button:not(:disabled),
