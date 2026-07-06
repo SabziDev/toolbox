@@ -20,8 +20,8 @@ const submitForm = (data) => createName({ data, resetForm });
     type="TYPE"
     placeholder="PLACEHOLDER"
     className={clsx([
-      "placeholder:text-NAME",
-      errors.email ? "border-red-500 ring-red-500" : "border-blue",
+      "border-2 placeholder:text-NAME",
+      errors.email ? "border-red-500 ring-red-500" : "border-COLOR",
     ])}
     {...register("NAME")}
   />
