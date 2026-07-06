@@ -13,9 +13,8 @@ const removeAppPreloader = () => {
 
 const App = () => {
   useEffect(() => {
-    removeAppPreloader();
-
     logDeveloperSignature();
+    removeAppPreloader();
   }, []);
 
   return <RouterProvider router={router} />;

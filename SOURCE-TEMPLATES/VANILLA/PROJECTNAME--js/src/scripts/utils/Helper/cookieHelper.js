@@ -2,9 +2,7 @@ const cookieHelper = ({ key = "", defaultValue = null }) => {
   const getStoredValue = async () => {
     const cookieResult = await cookieStore.get(key);
 
-    return cookieResult === null
-      ? defaultValue
-      : JSON.parse(cookieResult.value);
+    return JSON.parse(cookieResult?.value ?? null) ?? defaultValue;
   };
 
   const setValue = async (cookieOptions) => {
