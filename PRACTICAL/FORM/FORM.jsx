@@ -12,7 +12,11 @@ const {
   resolver: zodResolver(nameSchema),
 });
 
-const submitForm = (data) => createName({ data, resetForm });
+const submitForm = (data) => {
+  // TODO Toast-Message?
+  toast.success("MESSAGE", { duration: Infinity });
+  createName({ data, resetForm });
+};
 
 <form noValidate onSubmit={handleSubmit(submitForm)}>
   {/* TODO Input-type - placeholder - TC - B && R - register - Error Message */}
@@ -36,6 +40,11 @@ const submitForm = (data) => createName({ data, resetForm });
       isSubmitting && "pointer-events-none opacity-50 select-none",
     ])}
   >
-    BTN
+    {/* TODO BeatLoader Color - Btn Text */}
+    {isSubmitting ? (
+      <BeatLoader size={10} speedMultiplier={0.8} color="#COLOR" />
+    ) : (
+      "BTN"
+    )}
   </button>
 </form>;
