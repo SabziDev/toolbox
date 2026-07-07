@@ -5,7 +5,7 @@
   
 </NameContextProvider>;
 
-const { VALUE, setValue } = useContext(NameContext);
+const { VALUE, setValue } = use(NameContext);
 */
 
 import { createContext, useState } from "react";

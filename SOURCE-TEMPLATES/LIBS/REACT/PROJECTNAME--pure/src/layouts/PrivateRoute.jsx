@@ -1,15 +1,12 @@
 import { Navigate, useOutlet } from "react-router";
 
-const isACCESSIBLE = false;
-
 const PrivateRoute = () => {
   const outlet = useOutlet();
+  const { NAME, isNAMELoading } = use(AuthContext);
 
-  if (!isACCESSIBLE) {
-    return <Navigate to="/" replace />;
-  }
+  if (isNAMELoading) return;
 
-  return outlet;
+  return NAME ? outlet : <Navigate to="/LINK" replace />;
 };
 
 export default PrivateRoute;

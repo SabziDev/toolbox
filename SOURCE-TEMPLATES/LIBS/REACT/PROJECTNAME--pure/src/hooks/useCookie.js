@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 
 const useCookie = ({ key = "", defaultValue = null }) => {
   const [storedValue, setStoredValue] = useState(defaultValue);
+  const [isCookieLoading, setIsCookieLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       const cookieResult = await cookieStore.get(key);
 
       if (cookieResult !== null) setStoredValue(JSON.parse(cookieResult.value));
+
+      setIsCookieLoading(false);
     })();
   }, [key]);
 
@@ -19,7 +22,7 @@ const useCookie = ({ key = "", defaultValue = null }) => {
     setStoredValue(cookieOptions.value);
   };
 
-  return [storedValue, setValue];
+  return [storedValue, setValue, isCookieLoading];
 };
 
 export default useCookie;
