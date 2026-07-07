@@ -2,7 +2,7 @@ import { Navigate, useOutlet } from "react-router";
 
 const PrivateRoute = () => {
   const outlet = useOutlet();
-  const { NAME, isNAMELoading } = use(AuthContext);
+  const { NAME, isNAMELoading } = use(NameAuthContext);
 
   if (isNAMELoading) return;
 
