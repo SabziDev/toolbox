@@ -3,6 +3,7 @@ const staticPropertiesOrder = [
   "key",
   "ref",
   "id",
+  "htmlFor",
   "type",
   "name",
   "value",

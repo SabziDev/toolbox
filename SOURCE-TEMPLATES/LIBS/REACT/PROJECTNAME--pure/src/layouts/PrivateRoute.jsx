@@ -1,12 +1,14 @@
-import { Navigate, useOutlet } from "react-router";
+import { use } from "react";
+import { Navigate } from "react-router";
+
+import MainLayout from "./MainLayout/MainLayout";
 
 const PrivateRoute = () => {
-  const outlet = useOutlet();
   const { NAME, isNAMELoading } = use(NameAuthContext);
 
   if (isNAMELoading) return;
 
-  return NAME ? outlet : <Navigate to="/LINK" replace />;
+  return NAME ? <MainLayout /> : <Navigate to="/LINK" replace />;
 };
 
 export default PrivateRoute;

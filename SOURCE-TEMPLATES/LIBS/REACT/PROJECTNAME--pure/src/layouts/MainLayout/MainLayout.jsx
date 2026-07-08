@@ -17,7 +17,8 @@ const MainLayout = () => {
 
       {!isHideLayout && <Header />}
 
-      <main id="main-root">
+      // TODO main mt
+      <main id="main-root" className="mt-SIZE">
         {isPage404 ? (
           outlet
         ) : (
@@ -27,7 +28,7 @@ const MainLayout = () => {
           </div>
         )}
       </main>
-
+      
       {!isHideLayout && <Footer />}
     </>
   );
