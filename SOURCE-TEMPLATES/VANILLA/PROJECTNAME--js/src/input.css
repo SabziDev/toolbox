@@ -44,15 +44,25 @@
   html::-webkit-scrollbar-corner {
     @apply bg-transparent;
   }
-  *:not(html) {
+  *:not(html)::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  *:not(html)::-webkit-scrollbar-thumb {
     /* TODO Scrollbar Color */
-    @apply scrollbar-thin scrollbar-thumb-COLOR;
+    @apply bg-COLOR rounded-full;
+  }
+  *:not(html)::-webkit-scrollbar-thumb:hover {
+    /* TODO Scrollbar Color */
+    @apply bg-COLOR/80;
+  }
+  *:not(html)::-webkit-scrollbar-corner {
+    @apply bg-transparent;
   }
 
   input,
   textarea {
-    /* TODO input & textarea ring BG */
-    @apply outline-0! transition-shadow focus:ring-2 focus:ring-COLOR;
+    /* TODO input && textarea ring BG && placeholder TC */
+    @apply outline-0! transition-shadow focus:ring-2 focus:ring-COLOR placeholder:text-COLOR;
   }
   input:-webkit-autofill {
     @apply [transition-property:color,background-color] duration-9999999;

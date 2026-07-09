@@ -10,13 +10,6 @@ import NotFound from "./pages/NotFound/page";
 // const Name = lazy(() => import("./pages/public/Name/page"));
 import Home from "./pages/public/Home/page";
 
-// const preventReloadPageOnSamePath = () => {
-//   return {
-//     shouldRevalidate: ({ currentUrl, nextUrl }) =>
-//       currentUrl.pathname !== nextUrl.pathname,
-//   };
-// };
-
 const router = createBrowserRouter([
   {
     path: "/",
