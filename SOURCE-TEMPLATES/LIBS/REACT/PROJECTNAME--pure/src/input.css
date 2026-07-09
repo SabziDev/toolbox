@@ -44,18 +44,18 @@
   html::-webkit-scrollbar-corner {
     @apply bg-transparent;
   }
-  *:not(html)::-webkit-scrollbar {
+  *:not(html) ::-webkit-scrollbar {
     @apply w-1.5;
   }
-  *:not(html)::-webkit-scrollbar-thumb {
+  *:not(html) ::-webkit-scrollbar-thumb {
     /* TODO Scrollbar Color */
     @apply bg-COLOR rounded-full;
   }
-  *:not(html)::-webkit-scrollbar-thumb:hover {
+  *:not(html) ::-webkit-scrollbar-thumb:hover {
     /* TODO Scrollbar Color */
     @apply bg-COLOR/80;
   }
-  *:not(html)::-webkit-scrollbar-corner {
+  *:not(html) ::-webkit-scrollbar-corner {
     @apply bg-transparent;
   }
 
