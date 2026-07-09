@@ -24,7 +24,6 @@ alias iBPRC="npm i -D babel-plugin-react-compiler@latest @rolldown/plugin-babel"
 alias iC="npm i clsx && run"
 
 alias iRR="npm i react-router"
-alias iRTLB="npm i react-top-loading-bar"
 alias iFM="npm i framer-motion"
 
 alias iRI="npm i react-icons && run"
