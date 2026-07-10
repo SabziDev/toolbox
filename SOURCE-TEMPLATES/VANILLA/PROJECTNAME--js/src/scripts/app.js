@@ -7,7 +7,7 @@ import $ from "./utils/$/$";
 // import { NAME } from "./modules/NAME.js"
 
 // const rootElem = document.documentElement;
-ca
+ca;
 //? ......................................................................................
 
 // const appLoadErrorElem = $("#app-load-error");
@@ -21,9 +21,9 @@ ca
 
 const removeAppPreloader = () => {
   setTimeout(() => {
-    $("#app-preloader")?.remove();
     document.body.classList.remove("overflow-hidden");
-  }, 300);
+    $("#app-preloader")?.remove();
+  }, 1000);
 };
 
 window.addEventListener("load", () => {

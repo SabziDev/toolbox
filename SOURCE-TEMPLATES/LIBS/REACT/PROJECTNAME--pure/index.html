@@ -30,7 +30,8 @@
     <link rel="icon" type="image/png" href="./app-favicon.png" />
 
     <style>
-      #app-preloader {
+      #app-preloader,
+      #route-preloader {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -40,7 +41,8 @@
         background-color: #fff;
         z-index: 9999;
       }
-      .app-preloader__pulse {
+      .app-preloader__pulse,
+      .route-preloader__pulse {
         width: 100px;
         height: 100px;
         margin: 100px auto;
@@ -48,10 +50,10 @@
         /* TODO Preloader Pulse BG */
         background-color: COLOR;
         opacity: 0.8;
-        animation: app-preloader-pulse 1.8s infinite ease-in-out;
+        animation: preloader-pulse 1.8s infinite ease-in-out;
       }
 
-      @keyframes app-preloader-pulse {
+      @keyframes preloader-pulse {
         0% {
           transform: scale(0);
         }

@@ -1,16 +1,12 @@
-import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router";
 
 // TODO ProgressBar Color
 const PROGRESS_BAR_COLOR = "bg-COLOR";
-
 const SHOW_DURATION = 0.8;
 const COMPLETE_DURATION = 0.2;
 const HIDE_DELAY = 150;
-const COMPLETE_DELAY = SHOW_DURATION * 1000;
-const HIDE_TIMEOUT = COMPLETE_DELAY + COMPLETE_DURATION * 1000 + HIDE_DELAY;
 const PROGRESS_KEYFRAMES = [
   0.02, 0.08, 0.2, 0.38, 0.55, 0.72, 0.84, 0.92, 0.96,
 ];
@@ -18,31 +14,36 @@ const PROGRESS_KEYFRAMES = [
 const NavigationProgressBar = () => {
   const { pathname } = useLocation();
 
-  const previousPathnameRef = useRef(pathname);
+  const isPageFirstLoadRef = useRef(true);
   const completeTimeoutRef = useRef();
   const hideTimeoutRef = useRef();
 
-  const [visible, setVisible] = useState(false);
-  const [completed, setCompleted] = useState(false);
+  const [isShow, setIsShow] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
-    if (previousPathnameRef.current === pathname) return;
+    if (isPageFirstLoadRef.current) {
+      isPageFirstLoadRef.current = false;
 
-    previousPathnameRef.current = pathname;
+      return;
+    }
 
     clearTimeout(completeTimeoutRef.current);
     clearTimeout(hideTimeoutRef.current);
 
-    setVisible(true);
-    setCompleted(false);
+    setIsShow(true);
+    setIsCompleted(false);
 
     completeTimeoutRef.current = setTimeout(() => {
-      setCompleted(true);
-    }, COMPLETE_DELAY);
+      setIsCompleted(true);
+    }, SHOW_DURATION * 1000);
 
-    hideTimeoutRef.current = setTimeout(() => {
-      setVisible(false);
-    }, HIDE_TIMEOUT);
+    hideTimeoutRef.current = setTimeout(
+      () => {
+        setIsShow(false);
+      },
+      SHOW_DURATION * 1000 + COMPLETE_DURATION * 1000 + HIDE_DELAY,
+    );
 
     return () => {
       clearTimeout(completeTimeoutRef.current);
@@ -52,22 +53,19 @@ const NavigationProgressBar = () => {
 
   return (
     <AnimatePresence>
-      {visible && (
+      {isShow && (
         <motion.div
           key={pathname}
           initial={{ scaleX: 0 }}
           animate={{
-            scaleX: completed ? 1 : PROGRESS_KEYFRAMES,
+            scaleX: isCompleted ? 1 : PROGRESS_KEYFRAMES,
           }}
           exit={{ opacity: 0 }}
           transition={{
-            duration: completed ? COMPLETE_DURATION : SHOW_DURATION,
+            duration: isCompleted ? COMPLETE_DURATION : SHOW_DURATION,
             ease: "easeOut",
           }}
-          className={clsx([
-            "fixed top-0 left-0 z-9999 h-1 w-full origin-left",
-            PROGRESS_BAR_COLOR,
-          ])}
+          className={`fixed top-0 left-0 z-9999 h-1 w-full origin-left ${PROGRESS_BAR_COLOR}`}
         />
       )}
     </AnimatePresence>

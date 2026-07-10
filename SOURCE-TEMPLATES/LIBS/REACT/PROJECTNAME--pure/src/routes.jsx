@@ -1,9 +1,9 @@
 /* eslint-disable custom/sort-object-props */
 
-// TODO Import lazy Component
-// import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
+import RoutePreloader from "./layouts/components/RoutePreloader/RoutePreloader";
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import NotFound from "./pages/NotFound/page";
 // TODO Lazy Component
@@ -28,7 +28,11 @@ const router = createBrowserRouter([
       // TODO Routes
       // {
       //   path: "NAME",
-      //   element: <Name />,
+      //   element: (
+      //     <Suspense fallback={<RoutePreloader />}>
+      //       <Name />
+      //     </Suspense>
+      //   ),
       // },
 
       {

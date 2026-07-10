@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
 const AppLoadError = () => {
-  useEffect(() => document.body.classList.add("overflow-hidden"));
+  useEffect(() => {
+    document.documentElement.classList.add("overflow-hidden");
+  }, []);
 
   return createPortal(
     <div
