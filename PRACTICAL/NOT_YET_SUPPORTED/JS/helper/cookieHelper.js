@@ -1,15 +1,15 @@
 const cookieHelper = ({ key = "", defaultValue = null }) => {
   const getStoredValue = async () => {
-    const cookieResult = await cookieStore.get(key);
+    const cookie = await cookieStore.get(key);
 
-    return JSON.parse(cookieResult?.value ?? null) ?? defaultValue;
+    return JSON.parse(cookie?.value ?? null) ?? defaultValue;
   };
 
-  const setValue = async (cookieOptions) => {
-    const value = JSON.stringify(cookieOptions.value);
-    const options = { name: key, ...cookieOptions, value };
+  const setValue = async ({ value, ...options }) => {
+    const value = JSON.stringify(value);
+    const cookieOptions = { name: key, ...options, value };
 
-    await cookieStore.set(options);
+    await cookieStore.set(cookieOptions);
   };
 
   return [getStoredValue, setValue];

@@ -19,7 +19,7 @@ const useCookie = ({ key = "", defaultValue = null }) => {
 
     let cookie = `${key}=${cookieValue}`;
 
-    const optionsMap = [
+    const cookieOptions = [
       ["path", options.path],
       ["domain", options.domain],
       ["max-age", options.maxAge],
@@ -27,7 +27,7 @@ const useCookie = ({ key = "", defaultValue = null }) => {
       ["secure", options.secure],
     ];
 
-    for (const [optionKey, optionValue] of optionsMap) {
+    for (const [optionKey, optionValue] of cookieOptions) {
       if (!optionValue) continue;
 
       cookie +=

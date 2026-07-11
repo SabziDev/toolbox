@@ -6,20 +6,20 @@ const useCookie = ({ key = "", defaultValue = null }) => {
 
   useEffect(() => {
     (async () => {
-      const cookieResult = await cookieStore.get(key);
+      const cookie = await cookieStore.get(key);
 
-      if (cookieResult !== null) setStoredValue(JSON.parse(cookieResult.value));
+      if (cookie !== null) setStoredValue(JSON.parse(cookie.value));
 
       setIsCookieLoading(false);
     })();
   }, [key]);
 
-  const setValue = async (cookieOptions) => {
-    const finalValue = JSON.stringify(cookieOptions.value);
-    const options = { name: key, ...cookieOptions, value: finalValue };
+  const setValue = async ({ value, ...options }) => {
+    const cookieValue = JSON.stringify(value);
+    const cookieOptions = { name: key, ...options, value: cookieValue };
 
-    await cookieStore.set(options);
-    setStoredValue(cookieOptions.value);
+    await cookieStore.set(cookieOptions);
+    setStoredValue(value);
   };
 
   return [storedValue, setValue, isCookieLoading];
