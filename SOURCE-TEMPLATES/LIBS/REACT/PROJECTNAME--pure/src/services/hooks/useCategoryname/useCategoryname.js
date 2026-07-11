@@ -7,7 +7,7 @@ const useNameQuery = () => {
 
   const { data: name, ...rest } = useQuery({
     queryKey,
-    queryFn: () => getNameApi(),
+    queryFn: ({ signal }) => getNameApi({ signal }),
   });
 
   return { name, ...rest };
