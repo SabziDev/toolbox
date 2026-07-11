@@ -1,0 +1,16 @@
+{
+  "useCookie --Snippet": {
+    "prefix": "uc",
+    "body": [
+      "const [stored${2/(.)/${1:/capitalize}/}Cookie, setStored${2/(.)/${1:/capitalize}/}] = useCookie$1({",
+      "key: ${3:${2}},",
+      "defaultValue: ${4:DEFAULTVALUE},",
+      "});",
+      "await setStored${2/(.)/${1:/capitalize}/}({",
+      "value: ${5:VALUE}",
+      "expires: Date.now() + 1000 * 60 * 60 * 24 * 30 * 6",
+      "});"
+    ],
+    "description": "Create a useCookie() --Snippet"
+  }
+}

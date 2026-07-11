@@ -1,28 +1,45 @@
-import { useEffect, useState } from "react";
+/* eslint-disable unicorn/no-document-cookie */
+
+import { useState } from "react";
 
 const useCookie = ({ key = "", defaultValue = null }) => {
-  const [storedValue, setStoredValue] = useState(defaultValue);
-  const [isCookieLoading, setIsCookieLoading] = useState(true);
+  const [storedValue, setStoredValue] = useState(() => {
+    const cookieValue = document.cookie
+      .split("; ")
+      .find((cookie) => cookie.startsWith(`${key}=`))
+      ?.slice(key.length + 1);
 
-  useEffect(() => {
-    (async () => {
-      const cookieResult = await cookieStore.get(key);
+    return cookieValue
+      ? JSON.parse(decodeURIComponent(cookieValue))
+      : defaultValue;
+  });
 
-      if (cookieResult !== null) setStoredValue(JSON.parse(cookieResult.value));
+  const setValue = ({ value, ...options }) => {
+    const cookieValue = encodeURIComponent(JSON.stringify(value));
 
-      setIsCookieLoading(false);
-    })();
-  }, [key]);
+    let cookie = `${key}=${cookieValue}`;
 
-  const setValue = async (cookieOptions) => {
-    const finalValue = JSON.stringify(cookieOptions.value);
-    const options = { name: key, ...cookieOptions, value: finalValue };
+    const optionsMap = [
+      ["path", options.path],
+      ["domain", options.domain],
+      ["max-age", options.maxAge],
+      ["samesite", options.sameSite],
+      ["secure", options.secure],
+    ];
 
-    await cookieStore.set(options);
-    setStoredValue(cookieOptions.value);
+    for (const [optionKey, optionValue] of optionsMap) {
+      if (!optionValue) continue;
+
+      cookie +=
+        optionKey === "secure" ? "; secure" : `; ${optionKey}=${optionValue}`;
+    }
+
+    document.cookie = cookie;
+
+    setStoredValue(value);
   };
 
-  return [storedValue, setValue, isCookieLoading];
+  return [storedValue, setValue];
 };
 
 export default useCookie;
