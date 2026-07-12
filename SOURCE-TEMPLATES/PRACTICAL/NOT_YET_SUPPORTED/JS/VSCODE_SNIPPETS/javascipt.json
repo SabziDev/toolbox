@@ -1,0 +1,18 @@
+{
+  "cookieHelper --Snippet": {
+    "prefix": "uc",
+    "body": [
+      "const [getStored${2/(.)/${1:/capitalize}/}, setStored${2/(.)/${1:/capitalize}/}] = cookieHelper$1({",
+      "key: ${3:${2}},",
+      "defaultValue: ${4:DEFAULTVALUE},",
+      "});",
+      "",
+      "const SIX_MONTHS = 60 * 60 * 24 * 30 * 6;",
+      "await setStored${2/(.)/${1:/capitalize}/}({",
+      "value: ${5:VALUE},",
+      "maxAge: SIX_MONTHS,",
+      "});"
+    ],
+    "description": "Create a cookieHelper() --Snippet"
+  }
+}

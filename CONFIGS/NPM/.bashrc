@@ -7,6 +7,8 @@ alias preview="npm run preview"
 alias lint="npm run lint"
 alias lintFix="npm run lint:fix"
 
+alias optimize="npm run optimize"
+
 #? --------------------------------------------------------------------------------------------------------
 # ---------------------------- - ALL - ----------------------------
 alias iVPSH="npm i -D vite-plugin-simple-html"

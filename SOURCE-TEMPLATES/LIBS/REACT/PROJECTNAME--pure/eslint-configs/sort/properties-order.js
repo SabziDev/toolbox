@@ -12,6 +12,7 @@ const staticPropertiesOrder = [
   "alt",
   "loading",
   "poster",
+  "preload",
   "controls",
   "href",
   "target",

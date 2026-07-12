@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "scripts": {
+    "enhance:imgs": "node scripts/imgs/enhance/enhance.imgs.js",
+    "optimize:imgs": "node scripts/imgs/optimize/optimize.imgs.js",
+    "optimize:videos": "node scripts/videos/optimize/optimize.videos.js",
+    "optimize:audios": "node scripts/audios/optimize/optimize.audios.js",
+    "optimize:fonts": "node scripts/fonts/optimize/optimize.fonts.js",
+    "optimize:svgs": "svgo --config=scripts/svgs/optimize/optimize.svgs.js ASSETS",
+    "optimize": "node scripts/optimize.js"
+  },
+  "devDependencies": {
+    "sharp-cli": "^5.2.0",
+    "svgo": "^4.0.2",
+    "ttf2woff2": "^8.0.1"
+  }
+}
