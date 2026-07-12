@@ -28,9 +28,10 @@ alias iFM="npm i framer-motion"
 
 alias iRI="npm i react-icons && run"
 alias iRHT="npm i react-hot-toast && run"
+alias iRS="npm i react-spinners && run"
 alias iRQ="npm i @tanstack/react-query && run"
 alias iRHF="npm i react-hook-form @hookform/resolvers && run"
-alias iRQAZ="npm i @tanstack/react-query && iA && iZ && run"
+alias iRQA="npm i @tanstack/react-query axios zod react-hook-form @hookform/resolvers react-hot-toast react-spinners && run"
 # -------- TS --------
 #? --------------------------------------------------------------------------------------------------------
 

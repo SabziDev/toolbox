@@ -35,7 +35,7 @@ const submitForm = (data) => createName({ data, resetForm });
     className={clsx([
       // TODO Btn bg
       "bg-NAME active:scale-98 active:bg-NAME/90",
-      isPending && "pointer-events-none opacity-50 select-none",
+      isPending && "cursor-not-allowed opacity-50 select-none",
     ])}
   >
     {/* TODO BeatLoader Color - Btn Text */}
