@@ -14,21 +14,18 @@ const MainLayout = () => {
   return (
     <>
       <LayoutBase />
-
       {!isHideLayout && <Header />}
-
       // TODO main mt
       <main id="main-root" className="mt-SIZE">
         {isPage404 ? (
           outlet
         ) : (
           // TODO Sections mt
-          <div className="*:mt-SIZE container">
+          <div className="container *:not-first:mt-SIZE">
             <AnimatedOutlet>{outlet}</AnimatedOutlet>
           </div>
         )}
       </main>
-      
       {!isHideLayout && <Footer />}
     </>
   );
