@@ -20,10 +20,8 @@ ca;
 //  codes...
 
 const removeAppPreloader = () => {
-  setTimeout(() => {
-    document.body.classList.remove("overflow-hidden");
-    $("#app-preloader")?.remove();
-  }, 1000);
+  document.body.classList.remove("overflow-hidden");
+  $("#app-preloader")?.remove();
 };
 
 window.addEventListener("load", () => {

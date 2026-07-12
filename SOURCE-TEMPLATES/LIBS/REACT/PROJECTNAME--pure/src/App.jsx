@@ -5,10 +5,8 @@ import logDeveloperSignature from "./layouts/components/DeveloperSignature/logDe
 import router from "./routes";
 
 const removeAppPreloader = () => {
-  setTimeout(() => {
-    document.body.classList.remove("overflow-hidden");
-    document.querySelector("#app-preloader")?.remove();
-  }, 1000);
+  document.body.classList.remove("overflow-hidden");
+  document.querySelector("#app-preloader")?.remove();
 };
 
 const App = () => {
