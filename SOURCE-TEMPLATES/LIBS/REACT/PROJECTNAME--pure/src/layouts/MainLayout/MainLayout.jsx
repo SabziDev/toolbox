@@ -21,7 +21,7 @@ const MainLayout = () => {
           outlet
         ) : (
           // TODO Sections mt
-          <div className="container *:not-first:mt-SIZE">
+          <div className="container *:*:not-first:mt-SIZE">
             <AnimatedOutlet>{outlet}</AnimatedOutlet>
           </div>
         )}
