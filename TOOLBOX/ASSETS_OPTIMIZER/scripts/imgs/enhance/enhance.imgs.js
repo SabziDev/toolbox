@@ -36,7 +36,7 @@ async function enhanceImages(dir) {
     );
 
     await fs.unlink(filePath);
-    await fs.rename(temp, filePath.replace(/\.(png|jpe?g\webp)$/i, ".png"));
+    await fs.rename(temp, filePath.replace(/\.(png|jpe?g|webp)$/i, ".png"));
   }
 }
 
