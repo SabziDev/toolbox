@@ -6,7 +6,7 @@ import { useLocation } from "react-router";
 const PROGRESS_BAR_COLOR = "bg-COLOR";
 const SHOW_DURATION = 0.8;
 const COMPLETE_DURATION = 0.2;
-const HIDE_DELAY = 150;
+const HIDE_DELAY = 500;
 const PROGRESS_KEYFRAMES = [
   0.02, 0.08, 0.2, 0.38, 0.55, 0.72, 0.84, 0.92, 0.96,
 ];
