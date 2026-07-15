@@ -1,10 +1,9 @@
 const DeveloperSignature = () => (
-  // TODO Developer-Signature TS
   <a
     href="https://SabziDev.com"
     target="_blank"
     rel="noreferrer noopener"
-    className="text-SIZE font-sans ltr"
+    className="font-sans"
   >
     <span>Built pixel by pixel by </span>
     <strong className="text-emerald-600 underline underline-offset-2">
