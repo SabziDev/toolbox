@@ -3,6 +3,11 @@
 
 @import "tailwindcss";
 @custom-variant hover (&:hover);
+@custom-variant firefox {
+  @supports (-moz-appearance: none) {
+    @slot;
+  }
+}
 /* TODO Custom-Variant for Dark-mode? */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
