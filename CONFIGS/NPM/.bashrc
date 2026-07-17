@@ -6,6 +6,7 @@ alias preview="npm run preview"
 
 alias lint="npm run lint"
 alias lintFix="npm run lint:fix"
+alias emptyD="find . -type d -empty"
 
 alias optimize="npm run optimize"
 

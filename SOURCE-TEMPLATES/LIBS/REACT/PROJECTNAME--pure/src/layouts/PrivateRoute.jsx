@@ -1,12 +1,15 @@
 import { use } from "react";
 import { Navigate } from "react-router";
 
+import Preloader from "@/components/Preloader/Preloader";
+import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
 import MainLayout from "./MainLayout/MainLayout";
 
 const PrivateRoute = () => {
-  const { NAME, isNAMELoading } = use(NameAuthContext);
+  const { NAME, isLoading, isError } = use(NameAuthContext);
 
-  if (isNAMELoading) return;
+  if (isLoading) return <Preloader />;
+  if (isError) return <AppLoadError />;
 
   return NAME ? <MainLayout /> : <Navigate to="/LINK" replace />;
 };

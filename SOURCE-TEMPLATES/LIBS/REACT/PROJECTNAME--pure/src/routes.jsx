@@ -3,7 +3,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
-import RoutePreloader from "./layouts/components/RoutePreloader/RoutePreloader";
+import Preloader from "./layouts/components/Preloader/Preloader";
 import MainLayout from "./layouts/MainLayout/MainLayout";
 import NotFound from "./pages/NotFound/page";
 // TODO Lazy Component
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       // {
       //   path: "NAME",
       //   element: (
-      //     <Suspense fallback={<RoutePreloader />}>
+      //     <Suspense fallback={<Preloader />}>
       //       <Name />
       //     </Suspense>
       //   ),

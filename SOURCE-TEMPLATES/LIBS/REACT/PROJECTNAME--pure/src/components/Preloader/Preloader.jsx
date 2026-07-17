@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-const RoutePreloader = () => {
+const Preloader = () => {
   const [isShowPreloader, setIsShowPreloader] = useState(false);
 
   useEffect(() => {
@@ -18,12 +18,12 @@ const RoutePreloader = () => {
 
   return createPortal(
     isShowPreloader && (
-      <div id="route-preloader">
-        <div className="route-preloader__pulse" />
+      <div id="preloader">
+        <div className="preloader__pulse" />
       </div>
     ),
     document.body,
   );
 };
 
-export default RoutePreloader;
+export default Preloader;
