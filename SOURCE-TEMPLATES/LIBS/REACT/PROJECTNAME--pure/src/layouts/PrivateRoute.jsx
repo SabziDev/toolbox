@@ -3,6 +3,7 @@ import { Navigate } from "react-router";
 
 import Preloader from "@/components/Preloader/Preloader";
 import AppLoadError from "@/services/components/AppLoadError/AppLoadError";
+
 import MainLayout from "./MainLayout/MainLayout";
 
 const PrivateRoute = () => {

@@ -1,5 +1,3 @@
-/* eslint-disable custom/sort-object-props */
-
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 
