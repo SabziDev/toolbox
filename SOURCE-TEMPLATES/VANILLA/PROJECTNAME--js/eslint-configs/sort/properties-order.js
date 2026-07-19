@@ -4,6 +4,7 @@ const staticPropertiesOrder = [
   "ref",
   "id",
   "title",
+  "desc",
   "htmlFor",
   "type",
   "name",
