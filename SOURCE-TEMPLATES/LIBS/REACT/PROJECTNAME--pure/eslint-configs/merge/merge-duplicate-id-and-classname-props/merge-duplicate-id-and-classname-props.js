@@ -61,14 +61,11 @@ const mergeDuplicateIdAndClassNameProps = {
               }
 
               context.report({
-                node: attributes[1],
-
-                messageId: "merge",
-
                 data: {
                   prop: propName,
                 },
-
+                node: attributes[1],
+                messageId: "merge",
                 fix(fixer) {
                   const mergedValue = [...new Set(values)].join(" ").trim();
 

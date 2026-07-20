@@ -117,9 +117,9 @@ const noInvalidIdAndClassNameValue = {
             if (!invalidValue) return;
 
             context.report({
+              data: { value: invalidValue, attribute },
               node,
               messageId: "invalid",
-              data: { value: invalidValue, attribute },
               fix: (fixer) => {
                 if (invalidElementIndex === -2) {
                   return fixer.remove(node);
