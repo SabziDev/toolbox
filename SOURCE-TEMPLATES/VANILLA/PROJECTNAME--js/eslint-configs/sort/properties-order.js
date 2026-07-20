@@ -23,7 +23,6 @@ const staticPropertiesOrder = [
   "to",
   "replace",
 ];
-
 const eventHandlerOrder = ["onClick", "onChange", "onKeyUp"];
 
 export { eventHandlerOrder, staticPropertiesOrder };

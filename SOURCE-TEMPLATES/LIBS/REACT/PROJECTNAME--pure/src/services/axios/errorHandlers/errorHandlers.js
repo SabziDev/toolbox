@@ -7,7 +7,7 @@ const errorHandlers = (error) => {
     return Promise.reject(connectionError);
   }
 
-  const { status, data } = error.response;
+  const { data, status } = error.response;
 
   switch (status) {
     //! Name-Error Status && Message
