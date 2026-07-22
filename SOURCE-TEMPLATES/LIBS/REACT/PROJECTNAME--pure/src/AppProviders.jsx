@@ -21,6 +21,9 @@ const queryClient = new QueryClient({
     onError: (err) => err.isShowToast !== false && toast.error(err.message),
   }),
   mutationCache: new MutationCache({
+    // TODO onSuccess Message
+    onSuccess: () => toast.success("عملیات با موفقیت انجام شد"),
+    // onSuccess: () => toast.success("Operation completed successfully"),
     onError: (err) => err.isShowToast !== false && toast.error(err.message),
   }),
 });
