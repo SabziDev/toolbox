@@ -1,10 +1,14 @@
 import api from "./axios/api";
 
 const getNameApi = async () => {
+  const signal = new AbortController();
+
   // TODO Req End-Point
   const res = await api.get("/NAME", {
     // TODO Req Paramas?
     params: { NAME: VALUE },
+
+    signal,
   });
 
   return res.data;
