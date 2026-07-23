@@ -1,40 +1,43 @@
-alias i="npm i"
-alias run="npm run dev"
-alias iRun="i && run"
-alias build="npm run build && preview"
-alias preview="npm run preview"
+alias n="npm"
+alias p="pnpm"
 
-alias lint="npm run lint"
-alias lintFix="npm run lint:fix"
+alias i="p i"
+alias run="p dev"
+alias iRun="i && run"
+alias preview="p preview"
+alias build="p build && preview"
+
+alias lint="p lint"
+alias lintFix="p lint:fix"
 alias emptyD="find . -type d -empty"
 
-alias optimize="npm run optimize"
+alias optimize="p optimize"
 
 #? --------------------------------------------------------------------------------------------------------
 # ---------------------------- - ALL - ----------------------------
-alias iVPSH="npm i -D vite-plugin-simple-html"
-alias iEL="npm i -D @fullstacksjs/eslint-config eslint prettier eslint-plugin-unicorn"
-alias iT="npm i tailwindcss @tailwindcss/vite"
+alias iVPSH="p i -D vite-plugin-simple-html"
+alias iEL="p i -D @fullstacksjs/eslint-config eslint prettier eslint-plugin-unicorn"
+alias iT="p i tailwindcss @tailwindcss/vite"
 
-alias iS="npm i swiper && run"
-alias iA="npm i axios && run"
-alias iZ="npm i zod && run"
+alias iS="p i swiper && run"
+alias iA="p i axios && run"
+alias iZ="p i zod && run"
 # ---------------------------- - PURE - ----------------------------
-alias iSA2="npm i sweetalert2 && run"
+alias iSA2="p i sweetalert2 && run"
 # -------- TS --------
 # ---------------------------- - REACT - ----------------------------
-alias iBPRC="npm i -D babel-plugin-react-compiler@latest @rolldown/plugin-babel"
-alias iC="npm i clsx && run"
+alias iBPRC="p i -D babel-plugin-react-compiler@latest @rolldown/plugin-babel"
+alias iC="p i clsx && run"
 
-alias iRR="npm i react-router"
-alias iFM="npm i framer-motion"
+alias iRR="p i react-router"
+alias iFM="p i framer-motion"
 
-alias iRI="npm i react-icons && run"
-alias iRHT="npm i react-hot-toast && run"
-alias iRS="npm i react-spinners && run"
-alias iRQ="npm i @tanstack/react-query && run"
-alias iRHF="npm i react-hook-form @hookform/resolvers && run"
-alias iRQA="npm i @tanstack/react-query axios zod react-hook-form @hookform/resolvers react-hot-toast react-spinners && run"
+alias iRI="p i react-icons && run"
+alias iRHT="p i react-hot-toast && run"
+alias iRS="p i react-spinners && run"
+alias iRQ="p i @tanstack/react-query && run"
+alias iRHF="p i react-hook-form @hookform/resolvers && run"
+alias iRQA="p i @tanstack/react-query axios zod react-hook-form @hookform/resolvers react-hot-toast react-spinners && run"
 # -------- TS --------
 #? --------------------------------------------------------------------------------------------------------
 
@@ -61,7 +64,8 @@ jsTemplate() {
   find . -maxdepth 1 \
     ! -name "." \
     ! -name "package.json" \
-    ! -name "package-lock.json" \
+    ! -name "pnpm-lock.yaml" \
+    ! -name "pnpm-workspace.yaml" \
     ! -name ".gitignore" \
     -exec rm -rf {} +
 
@@ -69,16 +73,17 @@ jsTemplate() {
   cp -rf "B:/Programming/toolbox/SOURCE-TEMPLATES/VANILLA/PROJECTNAME--js/." .
 
   # Add EsLint scripts!
-  npm pkg set scripts.lint="eslint" scripts.lint:fix="eslint --fix"
+  p pkg set scripts.lint="eslint" scripts.lint:fix="eslint --fix"
 }
-alias js="npm create vite@latest . -- --template vanilla --no-immediate && jsTemplate && i && iJPA && code . && exit"
+alias js="p create vite@latest . -- --template vanilla --no-immediate && jsTemplate && i && iJPA && code . && exit"
 # -------------------------------------------
 reactTemplate() {
   # Delete everything except a few items!
   find . -maxdepth 1 \
     ! -name "." \
     ! -name "package.json" \
-    ! -name "package-lock.json" \
+    ! -name "pnpm-lock.yaml" \
+    ! -name "pnpm-workspace.yaml" \
     ! -name ".gitignore" \
     -exec rm -rf {} +
 
@@ -86,10 +91,10 @@ reactTemplate() {
   cp -rf "B:/Programming/toolbox/SOURCE-TEMPLATES/LIBS/REACT/PROJECTNAME--pure/." .
 
   # Delete default EsLint and its scripts. Then, add EsLint scripts!
-  npm rm oxlint && npm pkg delete scripts.lint && npm pkg set scripts.lint="eslint" scripts.lint:fix="eslint --fix"
+  p rm oxlint && p pkg delete scripts.lint && p pkg set scripts.lint="eslint" scripts.lint:fix="eslint --fix"
 }
-alias reactWA="npm create vite@latest . -- --template react --no-immediate && reactTemplate && i && iRPA && code . && exit"
-alias react="npm create vite@latest . -- --template react --no-immediate && reactTemplate && i && iRPAA && code . && exit"
+alias reactWA="p create vite@latest . -- --template react --no-immediate && reactTemplate && i && iRPA && code . && exit"
+alias react="p create vite@latest . -- --template react --no-immediate && reactTemplate && i && iRPAA && code . && exit"
 #! --------------------------------------------------------------------------------------------------------
 
 export HISTSIZE=10000
