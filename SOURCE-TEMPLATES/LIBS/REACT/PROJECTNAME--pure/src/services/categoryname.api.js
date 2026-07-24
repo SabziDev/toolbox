@@ -1,4 +1,4 @@
-import api from "./axios/api";
+import api from "./axios/axios.instance";
 
 const getNameApi = async ({ signal }) => {
   // TODO Req End-Point
